@@ -17,7 +17,10 @@ def load_birthdays():
 def check_birthdays():
     """Checks if today matches any birthday."""
     birthdays = load_birthdays()
-    today = datetime.date.today()
+    # Use IST timezone (UTC+5:30) to ensure we check the correct "today"
+    # even if the server is in UTC.
+    tz = datetime.timezone(datetime.timedelta(hours=5, minutes=30))
+    today = datetime.datetime.now(tz).date()
     today_str = today.strftime("%m-%d")
     
     print(f"Checking birthdays for {today_str}...")

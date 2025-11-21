@@ -2,8 +2,8 @@ name: Birthday Checker
 
 on:
   schedule:
-    # Runs at 19:30 UTC every day (which is 1:00 AM IST)
-    - cron: '30 19 * * *'
+    # Runs at 20:30 UTC every day (which is 2:00 AM IST)
+    - cron: '30 20 * * *'
   workflow_dispatch: # Allows manual triggering
 
 jobs:
